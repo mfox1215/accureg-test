@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ajax} from 'rxjs/ajax';
-import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
