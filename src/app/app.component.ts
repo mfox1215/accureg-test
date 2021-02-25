@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ajax} from 'rxjs/ajax';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'accureg-test';
+  title = 'AccuReg Test';
+  url = 'https://raw.githubusercontent.com/ecummingsAccuReg/test/main/test%2Cjson';
+  logoUrl = 'https://www.accuregsoftware.com/wp-content/uploads/2021/01/accureg-logo-wtag-reversed.png';
+  data: any = {};
+  constructor() {
+    this.getData();
+  }
+  private getData() {
+    const response$ = ajax(this.url);
+    response$.subscribe(
+       res => {
+         console.log(res);
+         this.data = res.response;
+      },
+      err => {
+         console.log(err);
+      }
+    );
+  }
 }
