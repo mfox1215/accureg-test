@@ -8,7 +8,6 @@ import {filter} from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AccuReg Test';
   url = 'https://raw.githubusercontent.com/ecummingsAccuReg/test/main/test%2Cjson';
   logoUrl = 'https://www.accuregsoftware.com/wp-content/uploads/2021/01/accureg-logo-wtag-reversed.png';
   data: any = {};
